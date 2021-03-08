@@ -11,10 +11,12 @@ class _Setting extends State<Setting> {
   TextEditingController _controller1 = TextEditingController();
   TextEditingController _controller2 = TextEditingController();
   TextEditingController _controller3 = TextEditingController();
+
   @override
   void initState() {
     super.initState();
-    _controller.text = "2";
+
+    _controller.text = "3";
     _controller1.text = "3";
     _controller2.text = "9";
     _controller3.text = "12"; // Setting the initial value for the field.
@@ -23,7 +25,10 @@ class _Setting extends State<Setting> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: Text('Setting')),
+        appBar: AppBar(
+          title: Text('Setting'),
+          leading: Image.asset('assets/images/NewIcon 2.png'),
+        ),
         body: Padding(
           padding: const EdgeInsets.all(20.0),
           child: Center(
@@ -31,17 +36,35 @@ class _Setting extends State<Setting> {
             SizedBox(
               height: 20,
             ),
-            Container(child: _digits()),
+            Container(
+              child: Text(
+                'Select Types Of Digits Here',
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              ),
+            ),
+            Container(child: _digit()),
             SizedBox(
               height: 40,
+            ),
+            Container(
+              child: Text('Select Types Of Random Numbers Here',
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
             ),
             Container(child: _randomNumbers()),
             SizedBox(
               height: 40,
             ),
+            Container(
+              child: Text('Select Timer To Display the Numbers',
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+            ),
             Container(child: _randomNumbersTimer()),
             SizedBox(
               height: 40,
+            ),
+            Container(
+              child: Text('Select Timer To Enter Your Values',
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
             ),
             Container(child: _TimerforEnter()),
             SizedBox(
@@ -51,11 +74,11 @@ class _Setting extends State<Setting> {
         ));
   }
 
-  _digits() {
+  _digit() {
     return Container(
       width: 400.0,
       foregroundDecoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(5.0),
+        borderRadius: BorderRadius.circular(15.0),
         border: Border.all(
           color: Colors.blueGrey,
           width: 2.0,
@@ -140,7 +163,7 @@ class _Setting extends State<Setting> {
     return Container(
       width: 400.0,
       foregroundDecoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(5.0),
+        borderRadius: BorderRadius.circular(15.0),
         border: Border.all(
           color: Colors.blueGrey,
           width: 2.0,
@@ -226,7 +249,7 @@ class _Setting extends State<Setting> {
     return Container(
       width: 400.0,
       foregroundDecoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(5.0),
+        borderRadius: BorderRadius.circular(15.0),
         border: Border.all(
           color: Colors.blueGrey,
           width: 2.0,
@@ -312,7 +335,7 @@ class _Setting extends State<Setting> {
     return Container(
       width: 400.0,
       foregroundDecoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(5.0),
+        borderRadius: BorderRadius.circular(15.0),
         border: Border.all(
           color: Colors.blueGrey,
           width: 2.0,
